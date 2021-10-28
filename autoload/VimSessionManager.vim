@@ -1,3 +1,9 @@
+if !exists("g:VimSelectSessionDir")
+    let s:VimSelectSession=expand("~/.cache/VimSession")
+else
+    let s:VimSelectSession=expand(g:VimSelectSessionDir)
+endif
+
 function! VimSessionManager#LoadSession( name )
     let l:file = s:VimSelectSession. '/' . a:name
     if filereadable(l:file)

@@ -6,19 +6,19 @@
 "setting
 "g:VimSelectSessionDir=
 
-if exists('g:loaded_VimSessionManager')
-  finish
-endif
-let g:loaded_VimSessionManager = 1
+"if exists('g:loaded_VimSessionManager')
+"  finish
+"endif
+"let g:loaded_VimSessionManager = 1
+
+command! -nargs=1 -complete=customlist,CompInfo SessionSave call VimSessionManager#SaveSession('<args>')
+command! -nargs=1 -complete=customlist,CompInfo SessionLoad call VimSessionManager#LoadSession('<args>')
 
 if !exists("g:VimSelectSessionDir")
     let s:VimSelectSession=expand("~/.cache/VimSession")
 else
     let s:VimSelectSession=expand(g:VimSelectSessionDir)
 endif
-
-command! -nargs=1 -complete=customlist,CompInfo SaveSession call VimSessionManager#SaveSession('<args>')
-command! -nargs=1 -complete=customlist,CompInfo LoadSession call VimSessionManager#LoadSession('<args>')
 
 function! CompInfo(lead, line, pos )
     let l:matches = []
