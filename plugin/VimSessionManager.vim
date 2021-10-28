@@ -1,20 +1,24 @@
 " VimSessionManager
 " Version: 0.0.1
-" Author: 
-" License: 
+" Author: ambergon
+" License: MIT
+
+"setting
+"g:VimSelectSessionDir=
 
 if exists('g:loaded_VimSessionManager')
   finish
 endif
 let g:loaded_VimSessionManager = 1
 
-if !exists("g:VimSelectInfoDir")
-    let s:VimSelectSession=expand("~/.cache/viminfo")
+if !exists("g:VimSelectSessionDir")
+    let s:VimSelectSession=expand("~/.cache/VimSession")
 else
-    let s:VimSelectSession=expand(g:VimSelectInfoDir)
+    let s:VimSelectSession=expand(g:VimSelectSessionDir)
 endif
 
-command! -nargs=? -complete=customlist,CompInfo SelectSession call VimSessionManager#SelectSession('<args>')
+command! -nargs=1 -complete=customlist,CompInfo SaveSession call VimSessionManager#SaveSession('<args>')
+command! -nargs=1 -complete=customlist,CompInfo LoadSession call VimSessionManager#LoadSession('<args>')
 
 function! CompInfo(lead, line, pos )
     let l:matches = []
@@ -31,18 +35,3 @@ function! CompInfo(lead, line, pos )
     return l:matches
 endfunction
 
-"let s:save_cpo = &cpo
-"set cpo&vim
-"
-"
-"let &cpo = s:save_cpo
-"unlet s:save_cpo
-
-" vim:set et:
-
-"""setting
-""dir
-""
-
-""save
-""load
