@@ -1,11 +1,5 @@
-if !exists("g:VimSelectSessionDir")
-    let s:VimSelectSession=expand("~/.cache/VimSession")
-else
-    let s:VimSelectSession=expand(g:VimSelectSessionDir)
-endif
-
 function! VimSessionManager#LoadSession( name )
-    let l:file = s:VimSelectSession. '/' . a:name
+    let l:file = g:VimSelectSessionDirectory. '/' . a:name
     if filereadable(l:file)
         execute("source " . l:file )
     endif
@@ -14,7 +8,7 @@ endfunction
 
 function! VimSessionManager#SaveSession( name )
     call VimSessionManager#checkDirectory()
-    let l:file = s:VimSelectSession. '/' . a:name
+    let l:file = g:VimSelectSessionDirectory. '/' . a:name
     if filereadable(l:file)
         echo 'overwrite? y / other'
         let l:c = getcharstr()
@@ -31,9 +25,9 @@ function! VimSessionManager#SaveSession( name )
 endfunction
 
 function! VimSessionManager#checkDirectory()
-    if !isdirectory(s:VimSelectSession)
-        call mkdir(s:VimSelectSession)
-        echo 'mkdir ' . s:VimSelectSession
+    if !isdirectory(g:VimSelectSessionDirectory)
+        call mkdir(g:VimSelectSessionDirectory)
+        echo 'mkdir ' . g:VimSelectSessionDirectory
     endif
 endfunction
 
