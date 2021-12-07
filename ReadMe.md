@@ -6,15 +6,15 @@ VimSessionManager
 Usage:
 ------
 ```
-:SessionSave {file_name}					*:SessionSave*
+:SessionSave {file_name}
 ```
-規定のディレクトリにfile_nameで保存されます。
+規定のディレクトリにmksessionファイルを保存します。
 同名ファイルが存在する場合上書きするか確認します。
 
 ```
-:SessionLoad {file_name}					*:SessionLoad*
+:SessionLoad {file_name}
 ```
-規定ディレクトリからファイルを読み込みます。
+規定ディレクトリからセッションファイルを読み込みます。
 
 
 Requirements:
