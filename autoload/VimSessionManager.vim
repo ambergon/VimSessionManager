@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 function! VimSessionManager#LoadSession( name )
     let l:file = g:VimSelectSessionDirectory. '/' . a:name
     if filereadable(l:file)
@@ -5,6 +13,8 @@ function! VimSessionManager#LoadSession( name )
     endif
     echo 'load session'
 endfunction
+
+
 
 function! VimSessionManager#SaveSession( name )
     call VimSessionManager#checkDirectory()
@@ -30,4 +40,26 @@ function! VimSessionManager#checkDirectory()
         echo 'mkdir ' . g:VimSelectSessionDirectory
     endif
 endfunction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

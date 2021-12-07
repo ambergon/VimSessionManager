@@ -1,0 +1,106 @@
+*VimSessionManager.txt*	日本語ヘルプ
+
+Version : 0.0.1
+Author  : ambergon
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+目次						*VimSessionManager-contents*
+
+概要				|VimSessionManager-introduction|
+使い方				|VimSessionManager-usage|
+インターフェイス		|VimSessionManager-interface|
+  変数				  |VimSessionManager-variables|
+  コマンド			  |VimSessionManager-commands|
+  関数				  |VimSessionManager-functions|
+TODO				|VimSessionManager-todo|
+更新履歴			|VimSessionManager-changelog|
+
+
+==============================================================================
+概要						*VimSessionManager-introduction*
+
+*VimSessionManager* は
+快適なセッション管理を手伝うプラグインです。
+セッションファイルが一箇所に管理できないことを不満に思い、作成しました。
+
+最新版:
+https://github.com/user/VimSessionManager.vim
+
+
+==============================================================================
+使い方						*VimSessionManager-usage*
+
+
+
+==============================================================================
+インターフェイス				*VimSessionManager-interface*
+
+------------------------------------------------------------------------------
+変数						*VimSessionManager-variables*
+
+g:VimSelectSessionDir				*g:VimSelectSessionDir*
+
+セッションファイルを保存するディレクトリを指定してください。
+'~'の使用が可能です。
+let g:VimSelectSessionDir= "~/yourSession"
+
+------------------------------------------------------------------------------
+コマンド					*VimSessionManager-commands*
+filenameは補完が効きます
+
+:SessionSave {file_name}					*:SessionSave*
+規定のディレクトリにfile_nameで保存されます。
+同名ファイルが存在する場合上書きするか確認します。
+
+:SessionLoad {file_name}					*:SessionLoad*
+規定ディレクトリからファイルを読み込みます。
+
+
+------------------------------------------------------------------------------
+関数						*VimSessionManager-functions*
+
+						*VimSessionManager#CompInfo()*
+VimSessionManager#CompInfo({lead}, {line}, {pos} )
+
+
+					*VimSessionManager#LoadSession()*
+VimSessionManager#LoadSession( {name} )
+
+
+					*VimSessionManager#SaveSession()*
+VimSessionManager#SaveSession( {name} )
+
+
+VimSessionManager#checkDirectory()	*VimSessionManager#checkDirectory()*
+
+
+==============================================================================
+TODO						*VimSessionManager-todo*
+
+
+
+==============================================================================
+更新履歴					*VimSessionManager-changelog*
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
