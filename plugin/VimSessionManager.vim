@@ -1,5 +1,5 @@
 " VimSessionManager
-" Version: 0.0.1
+" Version: 0.0.2
 " Author: ambergon
 " License: MIT
 
@@ -13,6 +13,7 @@ let g:loaded_VimSessionManager = 1
 
 command! -nargs=1 -complete=customlist,VimSessionManager#CompInfo SessionSave call VimSessionManager#SaveSession('<args>')
 command! -nargs=1 -complete=customlist,VimSessionManager#CompInfo SessionLoad call VimSessionManager#LoadSession('<args>')
+command! -nargs=1 -complete=customlist,VimSessionManager#CompInfo DeleteSession call VimSessionManager#DeleteSession('<args>')
 
 
 
@@ -32,8 +33,10 @@ function! VimSessionManager#CompInfo(lead, line, pos )
     let l:files = readdir( l:dir , l:Filter )
 
     for file in l:files
-        if file =~? '^' . strpart(a:lead,0)
-            call add(l:matches,file)
+        if file =~ '\.vim$'
+            if file =~? '^' . strpart(a:lead,0)
+                call add(l:matches,file)
+            endif
         endif
     endfor
     return l:matches

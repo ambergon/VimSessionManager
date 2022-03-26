@@ -68,11 +68,14 @@ let g:VimSelectSessionDir= "~/yourSession"
 filenameは補完が効きます
 
 :SessionSave {file_name}					*:SessionSave*
-規定のディレクトリにfile_nameで保存されます。
+規定のディレクトリにfile_name.vim で保存されます。
 同名ファイルが存在する場合上書きするか確認します。
 
 :SessionLoad {file_name}					*:SessionLoad*
 規定ディレクトリからファイルを読み込みます。
+
+:DeleteSession {file_name}
+セッションファイルを削除します。
 
 
 ------------------------------------------------------------------------------
@@ -100,6 +103,11 @@ TODO						*VimSessionManager-todo*
 
 ==============================================================================
 更新履歴					*VimSessionManager-changelog*
+ 0.0.2
+
+DeleteSessionを追加
+保存されるファイル、読み込まれるファイル名が.vimになるように変更。
+
 
 
 ==============================================================================

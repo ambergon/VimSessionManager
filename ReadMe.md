@@ -16,6 +16,11 @@ Usage:
 ```
 規定ディレクトリからセッションファイルを読み込みます。
 
+```
+:DeleteSession {file_name}
+```
+規定ディレクトリからセッションファイルを削除します。
+
 
 Requirements:
 -------------
@@ -29,3 +34,5 @@ Author:
 -------
 twitter
 [ambergon](https://twitter.com/Sc_lFoxGon)
+
+
