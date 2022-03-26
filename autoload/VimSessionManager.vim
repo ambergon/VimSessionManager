@@ -16,9 +16,9 @@ function! VimSessionManager#SaveSession( name )
     
     let l:file_ext = ''
     if a:name =~ '\.vim$'
-        l:file_ext = a:name
+        let l:file_ext = a:name
     else
-        l:file_ext = a:name . '.vim'
+        let l:file_ext = a:name . '.vim'
     endif
 
     call VimSessionManager#checkDirectory()
