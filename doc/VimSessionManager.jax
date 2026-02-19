@@ -63,6 +63,10 @@ g:VimSelectSessionDir				*g:VimSelectSessionDir*
 '~'の使用が可能です。
 let g:VimSelectSessionDir= "~/yourSession"
 
+
+g:VimSelectSessionDefault				*g:VimSelectSessionDefault*
+
+LoadSessionコマンドを引数なしで実行した際に呼び出されるセッションファイル名を指定。
 ------------------------------------------------------------------------------
 コマンド					*VimSessionManager-commands*
 filenameは補完が効きます

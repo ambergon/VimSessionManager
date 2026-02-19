@@ -1,10 +1,8 @@
-VimSessionManager
-=================
+# VimSessionManager
 快適なセッション管理を手伝うプラグインです。
 セッションファイルが一箇所に管理できないことを不満に思い、作成しました。
 
-Usage:
-------
+## Usage
 ```
 :SessionSave {file_name}
 ```
@@ -22,16 +20,20 @@ Usage:
 規定ディレクトリからセッションファイルを削除します。
 
 
-Requirements:
--------------
+## Setting
+### g:VimSelectSessionDirectory
+セッションファイルを保存するディレクトリを指定。
+
+### g:VimSelectSessionDefault
+SessionLoadを引数なしで実行した際に使用されるセッション名。
+
+## Requirements
 none
 
-License:
---------
+## License:
 MIT
 
-Author:
--------
+## Author
 twitter
 [ambergon](https://twitter.com/Sc_lFoxGon)
 

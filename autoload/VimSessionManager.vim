@@ -2,12 +2,25 @@
 
 
 
-function! VimSessionManager#LoadSession( name )
-    let l:file = g:VimSelectSessionDirectory. '/' . a:name
+function! VimSessionManager#LoadSession( n )
+    let l:name = a:n
+    if l:name == ""
+        if exists( "g:VimSelectSessionDefault" )
+            let l:name = g:VimSelectSessionDefault
+        else
+            echo "set g:VimSelectSessionDefault"
+            return
+        endif
+    endif
+
+
+    let l:file = g:VimSelectSessionDirectory. '/' . l:name
     if filereadable(l:file)
         execute("source " . l:file )
+        echo 'load session'
+    else
+        echo 'no file'
     endif
-    echo 'load session'
 endfunction
 
 
