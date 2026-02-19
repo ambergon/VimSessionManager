@@ -6,10 +6,10 @@
 "setting
 "g:VimSelectSessionDir=
 
-"if exists('g:loaded_VimSessionManager')
-"  finish
-"endif
-"let g:loaded_VimSessionManager = 1
+if exists('g:loaded_VimSessionManager')
+  finish
+endif
+let g:loaded_VimSessionManager = 1
 
 command! -nargs=1 -complete=customlist,VimSessionManager#CompInfo SessionSave call VimSessionManager#SaveSession('<args>')
 command! -nargs=? -complete=customlist,VimSessionManager#CompInfo SessionLoad call VimSessionManager#LoadSession('<args>')
